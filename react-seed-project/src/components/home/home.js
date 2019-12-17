@@ -1,15 +1,15 @@
 import React from 'react';
 import TopBar from '../top-bar';
-import './hello-component.scss';
+import './home.scss';
 import logo from '../../assets/images/logo.svg';
 
-export default function HelloComponent() {
+export default function Home() {
   return (
     <div className="wrapper">
       <TopBar />
       <div className={"content"}>
         <img src={logo} className="app-logo" alt="logo" />
-        <p>I'm like a blue rose</p>
+        <p>Home</p>
       </div>
     </div>
   );
