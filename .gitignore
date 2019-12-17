@@ -10,8 +10,6 @@ coverage/
 
 # production
 build/
-www/
-plugins/
 
 # misc
 .DS_Store
