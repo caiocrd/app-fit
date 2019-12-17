@@ -5,9 +5,9 @@ import './top-bar.scss';
 export default function TopBar() {
   return (
     <div className={"top-bar"}>
-      <a to={`/balthazar`}>Balthazar</a>
-      <a to={`/melchior`}>Melchior</a>
-      <a to={`/gaspar`}>Gaspar</a>
+      <a href='/#/' >Home</a>
+      <a href='/#/lorem' >Lorem</a>
+      <a href='/#/ipsum'>Ipsum</a>
     </div>
   )
 }

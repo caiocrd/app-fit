@@ -1,16 +1,17 @@
 import React from 'react';
-import TopBar from '../top-bar';
-import './app.scss';
-import logo from '../../assets/images/logo.svg';
+import { Route, Switch, HashRouter } from 'react-router-dom'
+
+import HelloComponent from '../hello-component';
+import OtherComponent from '../other-component';
 
 export default function App() {
   return (
-    <div className="app">
-      <TopBar />
-      <div className={"content"}>
-        <img src={logo} className="app-logo" alt="logo" />
-        <p>I'm like a blue rose</p>
-      </div>
-    </div>
+    <HashRouter>
+      <Switch>
+        <Route exact path='/' component={ HelloComponent } />
+        <Route path='/lorem' component={ HelloComponent } />
+        <Route path='/ipsum' component={ OtherComponent } />
+      </Switch>
+    </HashRouter>
   );
 }
