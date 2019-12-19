@@ -1,6 +1,6 @@
 import React from 'react';
 import TopBar from '../top-bar';
-import './screen1.scss';
+import './Screen1.scss';
 import logo from '../../assets/images/logo.svg';
 
 export default function Screen1() {

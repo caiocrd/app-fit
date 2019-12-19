@@ -1,1 +1,1 @@
-export { default } from './screen1.js'
+export { default } from './Screen1.js'

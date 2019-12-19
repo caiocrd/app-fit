@@ -1,1 +1,1 @@
-export { default } from './screen2.js'
+export { default } from './Screen2.js'
