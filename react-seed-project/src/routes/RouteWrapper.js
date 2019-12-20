@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom'
 import { isLogged } from '../utils/auth'
 
 export default function RouteWrapper({ component, isPrivate, ...rest }) {
-  const signed = isLogged();
+  const signed = isLogged() === 'true';
 
   /**
    * Redirect user to login page if he tries to access a private route

@@ -1,12 +1,12 @@
 import React from 'react';
-import './Login.scss';
+import './LoginView.scss';
 
-export default function Login() {
+export default function LoginView({ onLogin }) {
   return (
     <div className="wrapper">
       <div className={"content"}>
         <h2>Login</h2>
-        <button>Login</button>
+        <button onClick={onLogin}>Login</button>
       </div>
     </div>
   );
