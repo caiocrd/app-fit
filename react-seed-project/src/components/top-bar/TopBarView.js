@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import './TopBar.scss';
+import './TopBarView.scss';
 
-export default function TopBar({ onLogout }) {
+export default function TopBarView({ onLogout }) {
   return (
     <div className={"top-bar"}>
       <Link to='/' >Home</Link>
