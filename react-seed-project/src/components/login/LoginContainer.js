@@ -2,8 +2,44 @@ import React from 'react'
 import LoginView from './LoginView.js'
 import { login } from '../../utils/auth'
 
-export default function LoginContainer() {
+import withFirebaseAuth from 'react-with-firebase-auth'
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from '../../firebase/firebaseConfig';
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseAppAuth = firebaseApp.auth();
+const providers = {
+  googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
+
+function LoginContainer(props) {
+  const {
+    user,
+    signOut,
+    signInWithGoogle,
+  } = props;
+
+  const onLogin = () => {
+    signInWithGoogle().then(
+      result => {
+        if(result.code){
+          console.log('error', result.code);
+        } else {
+          console.log('result', result);
+          login();
+        }
+      },
+      error => console.log('exception', error)
+    );
+  }
+
   return(
-    <LoginView onLogin={login}/>
+    <LoginView user={user} onLogin={onLogin}/>
   )
 }
+
+export default withFirebaseAuth({
+  providers,
+  firebaseAppAuth,
+})(LoginContainer);
