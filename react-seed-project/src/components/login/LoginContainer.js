@@ -26,8 +26,7 @@ function LoginContainer(props) {
         if(result.code){
           console.log('error', result.code);
         } else {
-          console.log('result', result);
-          login();
+          login(result.credential.accessToken);
         }
       },
       error => console.log('exception', error)
