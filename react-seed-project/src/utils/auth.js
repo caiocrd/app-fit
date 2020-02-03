@@ -2,6 +2,10 @@ import { save, load, clear } from './localStorageUtils'
 
 export function login(token) {
   save('logged', true);
+
+  //Dummy logic for first access
+  save('firstAccess', true);
+
   save('Bearer', token);
   document.location.href = "";
 }
@@ -13,5 +17,5 @@ export function logout() {
 }
 
 export function isLogged() {
-  return load('logged');
+  return load('logged') === 'true';
 }
