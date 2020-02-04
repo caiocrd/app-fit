@@ -11,7 +11,9 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import { Link } from 'react-router-dom';
 
-export default function ProfileWizardView(props) {
+import { dietType, goalType, selfImageType } from './profileWizardUtils.js'
+
+export default function ProfileWizardView({handleChange, setProfileProperty, setDietAndFinish}) {
   return (
     <div>
     <SwipeableViews>
@@ -20,14 +22,14 @@ export default function ProfileWizardView(props) {
           <Typography variant="h5" component="h2">
             Qual o seu peso?
           </Typography>
-          <TextField id="input-weight" variant="outlined" />
+          <TextField id="weight" variant="outlined" onChange={handleChange} />
         </div>
 
         <div>
           <Typography variant="h5" component="h2">
             Qual sua altura?
           </Typography>
-          <TextField id="input-height" variant="outlined" />
+          <TextField id="height" variant="outlined" onChange={handleChange}  />
         </div>
 
         <div>
@@ -51,10 +53,10 @@ export default function ProfileWizardView(props) {
             Como você se sente?
           </Typography>
           <div>
-            <Button variant="outlined">Muito Magro</Button>
-            <Button variant="outlined">Magro</Button>
-            <Button variant="outlined">Acima do Peso</Button>
-            <Button variant="outlined">Muito Acima</Button>
+            <Button variant="outlined" onClick={() => setProfileProperty('selfImage', selfImageType.TOO_SKINNY)}>{selfImageType.TOO_SKINNY}</Button>
+            <Button variant="outlined" onClick={() => setProfileProperty('selfImage', selfImageType.SKINNY)}>{selfImageType.SKINNY}</Button>
+            <Button variant="outlined" onClick={() => setProfileProperty('selfImage', selfImageType.OVERWEIGHT)}>{selfImageType.OVERWEIGHT}</Button>
+            <Button variant="outlined" onClick={() => setProfileProperty('selfImage', selfImageType.OBESE)}>{selfImageType.OBESE}</Button>
           </div>
         </div>
       </div>
@@ -65,8 +67,8 @@ export default function ProfileWizardView(props) {
             Qual o seu objetivo?
           </Typography>
           <div>
-            <Button variant="outlined">Ganhar Músculo</Button>
-            <Button variant="outlined">Perder Gordura</Button>
+            <Button variant="outlined" onClick={() => setProfileProperty('goal', goalType.MUSCLE_GAIN)}>{goalType.MUSCLE_GAIN}</Button>
+            <Button variant="outlined" onClick={() => setProfileProperty('goal', goalType.FAT_LOSS)}>{goalType.FAT_LOSS}</Button>
           </div>
         </div>
       </div>
@@ -76,12 +78,12 @@ export default function ProfileWizardView(props) {
             E o que você prefere comer?
           </Typography>
           <List>
-            <ListItem to={{ pathname: `/screen1`}} component={Link} alignItems="flex-start">
+            <ListItem onClick={() => setDietAndFinish(dietType.LOW_CARB)} alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
               </ListItemAvatar>
               <ListItemText
-                primary="Muita proteína e muita salada"
+                primary={dietType.LOW_CARB}
                 secondary={
                   <Typography style={{display: 'inline'}} component="span" variant="body2" color="textPrimary">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis faucibus felis, in rutrum nisi porttitor sed. Nam nec lectus arcu.
@@ -90,12 +92,12 @@ export default function ProfileWizardView(props) {
               />
             </ListItem>
             <Divider variant="inset" component="li" />
-            <ListItem to={{ pathname: `/screen1`}} component={Link} alignItems="flex-start">
+            <ListItem onClick={() => setDietAndFinish(dietType.MID_CARB)} alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
               </ListItemAvatar>
               <ListItemText
-                primary="Carboidratos, proteína e salada"
+                primary={dietType.MID_CARB}
                 secondary={
                   <Typography style={{display: 'inline'}} component="span" variant="body2" color="textPrimary">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis faucibus felis, in rutrum nisi porttitor sed. Nam nec lectus arcu.
@@ -104,12 +106,12 @@ export default function ProfileWizardView(props) {
               />
             </ListItem>
             <Divider variant="inset" component="li" />
-            <ListItem to={{ pathname: `/screen1`}} component={Link} alignItems="flex-start">
+            <ListItem onClick={() => setDietAndFinish(dietType.HIGH_CARB)} alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
               </ListItemAvatar>
               <ListItemText
-                primary="Muito carboidrato"
+                primary={dietType.HIGH_CARB}
                 secondary={
                   <Typography style={{display: 'inline'}} component="span" variant="body2" color="textPrimary">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis faucibus felis, in rutrum nisi porttitor sed. Nam nec lectus arcu.

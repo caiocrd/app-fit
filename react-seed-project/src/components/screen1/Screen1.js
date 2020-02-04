@@ -3,7 +3,7 @@ import TopBar from '../top-bar';
 import './Screen1.scss';
 import logo from '../../assets/images/logo.svg';
 
-export default function Screen1() {
+export default function Screen1(props) {
   return (
     <div className="wrapper">
       <TopBar />

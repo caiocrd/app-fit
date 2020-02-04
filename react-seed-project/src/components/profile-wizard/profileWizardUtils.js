@@ -12,6 +12,6 @@ export const goalType = {
 
 export const dietType = {
     LOW_CARB: 'Muita proteína, muita salada',
-    MID_CARB: 'PCarboidratos, proteína e salada',
+    MID_CARB: 'Carboidratos, proteína e salada',
     HIGH_CARB: 'Muito carboidrato'
 }
