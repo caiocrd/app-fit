@@ -1,1 +1,1 @@
-export { default } from './ProfileWizardView.js'
+export { default } from './ProfileWizardContainer.js'

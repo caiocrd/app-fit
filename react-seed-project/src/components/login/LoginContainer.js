@@ -21,16 +21,18 @@ function LoginContainer(props) {
   } = props;
 
   const onLogin = () => {
-    signInWithGoogle().then(
-      result => {
-        if(result.code){
-          console.log('error', result.code);
-        } else {
-          login(result.credential.accessToken);
-        }
-      },
-      error => console.log('exception', error)
-    );
+    // signInWithGoogle().then(
+    //   result => {
+    //     if(result.code){
+    //       console.log('error', result.code);
+    //     } else {
+    //       login(result.credential.accessToken);
+    //     }
+    //   },
+    //   error => console.log('exception', error)
+    // );
+
+    login('bolsonaro e o carai');
   }
 
   return(
