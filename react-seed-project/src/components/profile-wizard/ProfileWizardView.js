@@ -19,16 +19,20 @@ export default function ProfileWizardView({handleChange, setProfileProperty, set
     <SwipeableViews>
       <div>
         <div>
-          <Typography variant="h5" component="h2">
-            Qual o seu peso?
-          </Typography>
+          <label htmlFor="weight">
+            <Typography variant="h5" component="h2">
+              Qual o seu peso?
+            </Typography>
+          </label>
           <TextField id="weight" variant="outlined" onChange={handleChange} />
         </div>
 
         <div>
-          <Typography variant="h5" component="h2">
-            Qual sua altura?
-          </Typography>
+          <label htmlFor="height">
+            <Typography variant="h5" component="h2">
+              Qual sua altura?
+            </Typography>
+          </label>
           <TextField id="height" variant="outlined" onChange={handleChange}  />
         </div>
 
