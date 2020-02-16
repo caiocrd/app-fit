@@ -3,7 +3,7 @@ import { StaticRouter } from 'react-router'
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 
-import Screen1 from './Screen1'
+import Screen1 from './screen1-view'
 
 let container;
 

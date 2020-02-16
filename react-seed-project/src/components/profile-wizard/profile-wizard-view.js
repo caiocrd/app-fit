@@ -9,9 +9,8 @@ import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
-import { Link } from 'react-router-dom';
 
-import { dietType, goalType, selfImageType } from './profileWizardUtils.js'
+import { dietType, goalType, selfImageType } from './profile-wizard-utils'
 
 export default function ProfileWizardView({handleChange, setProfileProperty, setDietAndFinish}) {
   return (

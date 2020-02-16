@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ProfileWizardView from './ProfileWizardView.js';
-import { save } from '../../utils/localStorageUtils.js'
+import ProfileWizardView from './profile-wizard-view';
+import { save } from '../../utils/local-storage'
 
 export default function ProfileWizardContainer(props) {
     const [profile, setProfile] = useState({});

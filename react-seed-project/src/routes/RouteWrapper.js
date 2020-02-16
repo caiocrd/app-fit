@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { isLogged } from '../utils/auth'
-import { load } from '../utils/localStorageUtils'
+import { load } from '../utils/local-storage'
 
 
 export default function RouteWrapper({ component, isPrivate, isFirstAccessPage, ...rest }) {

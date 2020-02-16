@@ -1,15 +1,15 @@
 import React from 'react';
 import TopBar from '../top-bar';
-import './Screen2.scss';
+import './screen1.scss';
 import logo from '../../assets/images/logo.svg';
 
-export default function Screen2() {
+export default function Screen1(props) {
   return (
     <div className="wrapper">
       <TopBar />
       <div className={"content"}>
         <img src={logo} className="app-logo" alt="logo" />
-        <p>Screen #2</p>
+        <p>Screen #1</p>
       </div>
     </div>
   );

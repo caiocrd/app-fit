@@ -1,6 +1,6 @@
 import React from 'react';
 import TopBar from '../top-bar';
-import './Home.scss';
+import './home.scss';
 import logo from '../../assets/images/logo.svg';
 
 export default function Home() {

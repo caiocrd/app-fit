@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render} from '@testing-library/react';
 
-import ProfileWizardView from './ProfileWizardView'
+import ProfileWizardView from './profile-wizard-view'
 
 
 test('weight input mask', () => {

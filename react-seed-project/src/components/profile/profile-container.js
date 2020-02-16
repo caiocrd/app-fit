@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileView from './ProfileView.js';
+import ProfileView from './profile-view';
 
 export default function ProfileContainer(props) {
     const onStart = () => {

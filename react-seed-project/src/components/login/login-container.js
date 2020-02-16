@@ -1,11 +1,12 @@
 import React from 'react'
-import LoginView from './LoginView.js'
-import { login } from '../../utils/auth'
-
 import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from '../../firebase/firebaseConfig';
+
+import LoginView from './login-view'
+import { login } from '../../utils/auth'
+
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();

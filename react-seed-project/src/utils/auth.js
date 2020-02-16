@@ -1,4 +1,4 @@
-import { save, load, clear } from './localStorageUtils'
+import { save, load, clear } from './local-storage'
 
 export function login(token) {
   save('logged', true);

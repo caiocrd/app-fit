@@ -1,1 +1,1 @@
-export { default } from './TopBarContainer.js'
+export { default } from './top-bar-container'

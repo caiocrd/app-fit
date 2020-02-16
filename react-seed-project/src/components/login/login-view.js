@@ -1,5 +1,5 @@
 import React from 'react';
-import './LoginView.scss';
+import './login-view.scss';
 
 export default function LoginView({ onLogin }) {
   return (

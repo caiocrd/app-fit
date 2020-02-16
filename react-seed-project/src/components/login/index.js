@@ -1,1 +1,1 @@
-export { default } from './LoginContainer.js'
+export { default } from './login-container'
