@@ -1,5 +1,4 @@
 import React from 'react';
-import SwipeableViews from 'react-swipeable-views';
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -9,50 +8,54 @@ import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles';
+import SwipeableViews from 'react-swipeable-views';
 
 import { dietType, goalType, selfImageType } from './profile-wizard-utils'
+import { styles } from './profile-wizard-styles'
+
+const useStyles = makeStyles(styles);
 
 export default function ProfileWizardView({handleChange, setProfileProperty, setDietAndFinish}) {
+  const classes = useStyles();
+
   return (
-    <div>
-    <SwipeableViews>
-      <div>
-        <div>
+    <div className={classes.componentRoot}>
+    <SwipeableViews className={classes.slideContainer}>
+      <div className={`${classes.slides}`}>
+        <div className={`input-group`}>
           <label htmlFor="weight">
-            <Typography variant="h5" component="h2">
+            <Typography variant="h5" component="h2" align="center">
               Qual o seu peso?
             </Typography>
           </label>
-          <TextField id="weight" variant="outlined" onChange={handleChange} />
+          <TextField id="weight" variant="filled" onChange={handleChange} />
         </div>
-
-        <div>
+        <div className={`input-group`}>
           <label htmlFor="height">
-            <Typography variant="h5" component="h2">
+            <Typography variant="h5" component="h2" align="center">
               Qual sua altura?
             </Typography>
           </label>
-          <TextField id="height" variant="outlined" onChange={handleChange}  />
+          <TextField id="height" variant="filled" onChange={handleChange} />
         </div>
-
         <div>
-          <Typography variant="h6" component="h3">
+          <Typography className={`gray400`} variant="subtitle2">
             IMC XX
           </Typography>
-          <Typography variant="subtitle1" >
+          <Typography variant="body2" >
             Sobrepeso
           </Typography>
-          <Typography variant="body2" >
+          <Typography variant="body1" >
             Praesent malesuada quis ante eu volutpat. Sed viverra non mauris pretium ullamcorper. Etiam dictum at massa et semper. Ut non sagittis leo. Duis accumsan elit arcu, ac vehicula erat dignissim et. 
           </Typography>
         </div>
-
-        <Button variant="contained" color="primary">CONTINUAR</Button>
+        <Button variant="contained" color="secondary">CONTINUAR</Button>
       </div>
 
-      <div>
+      <div className={`${classes.slides}`}>
         <div>
-          <Typography variant="h5" component="h2">
+          <Typography variant="h5" component="h2"  align="center">
             Como você se sente?
           </Typography>
           <div>
@@ -64,9 +67,9 @@ export default function ProfileWizardView({handleChange, setProfileProperty, set
         </div>
       </div>
 
-      <div>
+      <div className={`${classes.slides}`}>
         <div>
-          <Typography variant="h5" component="h2">
+          <Typography variant="h5" component="h2"  align="center">
             Qual o seu objetivo?
           </Typography>
           <div>
@@ -75,9 +78,10 @@ export default function ProfileWizardView({handleChange, setProfileProperty, set
           </div>
         </div>
       </div>
-      <div>
+
+      <div className={`${classes.slides}`}>
         <div>
-          <Typography variant="h5" component="h2">
+          <Typography variant="h5" component="h2"  align="center">
             E o que você prefere comer?
           </Typography>
           <List>
