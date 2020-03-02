@@ -1,0 +1,1 @@
+export const pixelToPercentage = num => `${(num*100)/360}%`;

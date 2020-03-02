@@ -2,9 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-export default function ProfileView({profile, onStart}) {
-  console.log(profile);
-    
+export default function ProfileView({profile, onStart}) {    
   return (
     <div>
       <div>
@@ -25,6 +23,12 @@ export default function ProfileView({profile, onStart}) {
         <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et tristique dui. Phasellus sit amet lacus dignissim, condimentum ligula vitae, iaculis nibh.</div>
         <div>Img</div><div>Img</div><div>Img</div>
       </div>
+
+      <p>{profile.weight}</p>
+      <p>{profile.height}</p>
+      <p>{profile.selfImage}</p>
+      <p>{profile.goal}</p>
+      <p>{profile.diet}</p>
       
       <div>
         <Button variant="outlined">REFAZER</Button>
