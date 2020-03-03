@@ -21,10 +21,11 @@ export const styles = theme => ({
     '& .input-group': {
       //marginBottom: pixelToPercentage(40),
       width: '100%',
-
-      '& input': {
+      '& .app-fit-dark-input  input': {
         backgroundColor: 'rgba(141,159,171,0.16)',
         color: 'white',
+      },
+      '& .app-fit-big-input  input': {
         fontSize: '24px',
         fontWeight: '700',
         textAlign: 'center',

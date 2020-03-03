@@ -44,7 +44,7 @@ const WeightAndHeightArea = ({classes, handleChange}) => (
               Qual o seu peso?
             </Typography>
           </label>
-          <TextField id="weight" variant="filled" color="secondary" fullWidth onChange={handleChange} />
+          <TextField className={`app-fit-dark-input app-fit-big-input`} id="weight" variant="filled" color="secondary" fullWidth onChange={handleChange} />
         </div>
       </Grid>
       <Grid item xs={12}>
@@ -54,7 +54,7 @@ const WeightAndHeightArea = ({classes, handleChange}) => (
               Qual sua altura?
             </Typography>
           </label>
-          <TextField id="height" variant="filled" color="secondary" fullWidth onChange={handleChange} />
+          <TextField className={`app-fit-dark-input app-fit-big-input`} id="height" variant="filled" color="secondary" fullWidth onChange={handleChange} />
         </div>
       </Grid>
       <Grid item xs={12}>
