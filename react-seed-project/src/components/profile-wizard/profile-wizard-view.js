@@ -22,7 +22,7 @@ export default function ProfileWizardView({index, setIndex, handleChange, setPro
   const classes = useStyles();
 
   return (
-    <div className={classes.profileWizardRoot}>
+    <div className={classes.wrapper}>
       <SwipeableViews className={classes.swipeableContainer} onChangeIndex={setIndex}>
         <WeightAndHeightArea classes={classes} index={index} handleChange={handleChange} />
         <BodyTypeArea classes={classes} index={index} setProfileProperty={setProfileProperty} />
@@ -35,7 +35,7 @@ export default function ProfileWizardView({index, setIndex, handleChange, setPro
 }
 
 const WeightAndHeightArea = ({classes, handleChange}) => (
-  <div className={`${classes.swipeableArea}`}>
+  <div className={classes.swipeableArea}>
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <div className={`input-group`}>
@@ -57,8 +57,8 @@ const WeightAndHeightArea = ({classes, handleChange}) => (
           <TextField className={`app-fit-dark-input app-fit-big-input`} id="height" variant="filled" color="secondary" fullWidth onChange={handleChange} />
         </div>
       </Grid>
-      <Grid item xs={12}>
-        <div className={`imc-info ` + (false ? `hidden` : ``)}>
+      <Grid item xs={12} className={`imc-info ` + (false ? `hidden` : ``)}>
+        <div >
           <Typography className={`gray400`} variant="subtitle2">
             IMC XX
           </Typography>
@@ -70,128 +70,122 @@ const WeightAndHeightArea = ({classes, handleChange}) => (
           </Typography>
         </div>
       </Grid>
+      <Grid item xs={12}>
+        <Button variant="contained" color="secondary" fullWidth className={`app-fit-round-button margin-top-40`}>CONTINUAR</Button>
+      </Grid>
     </Grid>
-    <div>
-      <Button variant="contained" color="secondary" fullWidth className={`round-button margin-top-40`}>CONTINUAR</Button>
-    </div>
   </div>
 );
 
 const BodyTypeArea = ({classes, setProfileProperty}) => (
-  <div className={`${classes.swipeableArea}`}>
-    <div>
-      <Typography variant="h5" component="h2"  align="center">
-        Como você se sente?
-      </Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <Button
-            variant="outlined"
-            className={`${classes.selectButton}`}
-            fullWidth
-            onClick={() => setProfileProperty('selfImage', selfImageType.TOO_SKINNY)} >
-              {selfImageType.TOO_SKINNY}
-          </Button>
-        </Grid>
-        <Grid item xs={6}>
-          <Button
-            variant="outlined"
-            fullWidth
-            className={`${classes.selectButton}`}
-            onClick={() => setProfileProperty('selfImage', selfImageType.SKINNY)} >
-              {selfImageType.SKINNY}
-          </Button>
-        </Grid>
-        <Grid item xs={6}>
-          <Button
-            variant="outlined"
-            fullWidth
-            className={`${classes.selectButton}`}
-            onClick={() => setProfileProperty('selfImage', selfImageType.OVERWEIGHT)} >
-              {selfImageType.OVERWEIGHT}
-          </Button>
-        </Grid>
-        <Grid item xs={6}>
-          <Button
-            variant="outlined"
-            fullWidth
-            className={`${classes.selectButton}`}
-            onClick={() => setProfileProperty('selfImage', selfImageType.OBESE)} >
-              {selfImageType.OBESE}
-          </Button>
-        </Grid>
+  <div className={classes.swipeableArea}>
+    <Typography variant="h5" component="h2"  align="center">
+      Como você se sente?
+    </Typography>
+    <Grid container spacing={2}>
+      <Grid item xs={6}>
+        <Button
+          variant="outlined"
+          className={`${classes.selectButton}`}
+          fullWidth
+          onClick={() => setProfileProperty('selfImage', selfImageType.TOO_SKINNY)} >
+            {selfImageType.TOO_SKINNY}
+        </Button>
       </Grid>
-    </div>
+      <Grid item xs={6}>
+        <Button
+          variant="outlined"
+          fullWidth
+          className={`${classes.selectButton}`}
+          onClick={() => setProfileProperty('selfImage', selfImageType.SKINNY)} >
+            {selfImageType.SKINNY}
+        </Button>
+      </Grid>
+      <Grid item xs={6}>
+        <Button
+          variant="outlined"
+          fullWidth
+          className={`${classes.selectButton}`}
+          onClick={() => setProfileProperty('selfImage', selfImageType.OVERWEIGHT)} >
+            {selfImageType.OVERWEIGHT}
+        </Button>
+      </Grid>
+      <Grid item xs={6}>
+        <Button
+          variant="outlined"
+          fullWidth
+          className={`${classes.selectButton}`}
+          onClick={() => setProfileProperty('selfImage', selfImageType.OBESE)} >
+            {selfImageType.OBESE}
+        </Button>
+      </Grid>
+    </Grid>
   </div>
 );
 
 const GoalArea = ({classes, setProfileProperty}) => (
-  <div className={`${classes.swipeableArea}`}>
-    <div>
-      <Typography variant="h5" component="h2"  align="center">
-        Qual o seu objetivo?
-      </Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <Button
-            variant="outlined"
-            fullWidth
-            className={`${classes.selectButton}`}
-            onClick={() => setProfileProperty('goal', goalType.MUSCLE_GAIN)} >
-              {goalType.MUSCLE_GAIN}
-          </Button>
-        </Grid>
-        <Grid item xs={6}>
-          <Button
-            variant="outlined"
-            fullWidth
-            className={`${classes.selectButton}`}
-            onClick={() => setProfileProperty('goal', goalType.FAT_LOSS)} >
-              {goalType.FAT_LOSS}
-          </Button>
-        </Grid>
+  <div className={classes.swipeableArea}>
+    <Typography variant="h5" component="h2"  align="center">
+      Qual o seu objetivo?
+    </Typography>
+    <Grid container spacing={2}>
+      <Grid item xs={6}>
+        <Button
+          variant="outlined"
+          fullWidth
+          className={`${classes.selectButton}`}
+          onClick={() => setProfileProperty('goal', goalType.MUSCLE_GAIN)} >
+            {goalType.MUSCLE_GAIN}
+        </Button>
       </Grid>
-    </div>
+      <Grid item xs={6}>
+        <Button
+          variant="outlined"
+          fullWidth
+          className={`${classes.selectButton}`}
+          onClick={() => setProfileProperty('goal', goalType.FAT_LOSS)} >
+            {goalType.FAT_LOSS}
+        </Button>
+      </Grid>
+    </Grid>
   </div>
 );
 
 const DietArea = ({classes, setDietAndFinish}) => (
-  <div className={`${classes.swipeableArea}`}>
-    <div>
-      <Typography variant="h5" component="h2"  align="center">
-        E o que você prefere comer?
-      </Typography>
-      <List className={`${classes.selectList}`}>
-        <ListItem onClick={() => setDietAndFinish(dietType.LOW_CARB)}>
-          <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            primary={dietType.LOW_CARB}
-            secondary={"Vestibulum sit amet tortor id tellus consequat lobortis. Suspendisse potenti."}
-          />
-        </ListItem>
-        <Divider component="li" />
-        <ListItem onClick={() => setDietAndFinish(dietType.MID_CARB)}>
-          <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            primary={dietType.MID_CARB}
-            secondary={"Sed ac ultricies risus, sed rutrum lectus. Suspendisse sit amet erat sapien. Etiam egestas aliquam malesuada."}
-          />
-        </ListItem>
-        <Divider component="li" />
-        <ListItem onClick={() => setDietAndFinish(dietType.HIGH_CARB)}>
-          <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            primary={dietType.HIGH_CARB}
-            secondary={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu ullamcorper erat."}
-          />
-        </ListItem>
-      </List>
-    </div>
+  <div className={classes.swipeableArea}>
+    <Typography variant="h5" component="h2"  align="center">
+      E o que você prefere comer?
+    </Typography>
+    <List className={`${classes.selectList}`}>
+      <ListItem onClick={() => setDietAndFinish(dietType.LOW_CARB)}>
+        <ListItemAvatar>
+          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary={dietType.LOW_CARB}
+          secondary={"Vestibulum sit amet tortor id tellus consequat lobortis. Suspendisse potenti."}
+        />
+      </ListItem>
+      <Divider component="li" />
+      <ListItem onClick={() => setDietAndFinish(dietType.MID_CARB)}>
+        <ListItemAvatar>
+          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary={dietType.MID_CARB}
+          secondary={"Sed ac ultricies risus, sed rutrum lectus. Suspendisse sit amet erat sapien. Etiam egestas aliquam malesuada."}
+        />
+      </ListItem>
+      <Divider component="li" />
+      <ListItem onClick={() => setDietAndFinish(dietType.HIGH_CARB)}>
+        <ListItemAvatar>
+          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary={dietType.HIGH_CARB}
+          secondary={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu ullamcorper erat."}
+        />
+      </ListItem>
+    </List>
   </div>
 );

@@ -1,13 +1,13 @@
 import { pixelToPercentage } from '../../utils/styles';
 
 export const styles = theme => ({
-  profileWizardRoot: {
+  wrapper: {
     backgroundColor: theme.palette.grays.gray800,
-    height: '100%'
+    height: '100%',
+    overflow: 'auto'
   },
   swipeableContainer: {
     color: 'white',
-    height: '100%',
     '& > div': {
       height: '100%'
     },

@@ -19,7 +19,6 @@ export const styles = theme => ({
       display: 'none'
     },
     '& .input-group': {
-      //marginBottom: pixelToPercentage(40),
       width: '100%',
       '& .app-fit-dark-input  input': {
         backgroundColor: 'rgba(141,159,171,0.16)',
@@ -32,15 +31,17 @@ export const styles = theme => ({
         padding: '10px'
       }
     },
-    '& .round-button': {
+    '& .app-fit-round-button': {
       borderRadius: '25px',
-      color: theme.palette.grays.gray800,
       fontSize: '20px',
       fontWeight: '700',
       height: '50px'
     },
     '& .margin-top-40': {
       marginTop: '40px'
+    },
+    '& .margin-bottom-40': {
+      marginBottom: '40px'
     },
   }
 });

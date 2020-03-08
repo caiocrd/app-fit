@@ -24,6 +24,9 @@ export const theme = createMuiTheme({
       gray700: '#495359',
       gray800: '#272D30',
       gray900: '#060607',
+    },
+    text: {
+      secondary: '#272D30'
     }
   }
 });
